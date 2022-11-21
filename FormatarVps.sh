@@ -6,16 +6,6 @@ echo -e "\033[1;37m┣━━━━━━━━━━━━━━━━━━━�
   read -p "┗━┫ POSSO REMOVER TUDO? [S/N]:" resp
 if [[ "$resp" = s || "$resp" = S ]];then
 clear
-echo -e "VERIFICANDO SE SUA INSTALAÇÃO É PREMIUM...." |lolcat
-sleep 2
-IP=$(wget -qO- ipv4.icanhazip.com)
-chave=$(curl -sSL "raw.githubusercontent.com/Posseidon2022/aiweb/Premium/Instalador/chave" | grep  -o $IP )  &>/dev/null
-         if [[ "$chave" != "$IP" ]]
-          then
-                echo -e "PARABÉNS! SUA INSTALAÇÃO É UMA VERSÃO 🏆 PREMIUM"
-                sleep 5
-                echo $chave > /bin/chave_inst
-                clear
                 echo -e "Procurando ferramentas de remoção...." |lolcat
                 sleep 3
                 clear
@@ -152,20 +142,13 @@ chave=$(curl -sSL "raw.githubusercontent.com/Posseidon2022/aiweb/Premium/Instala
                 sleep 10
                 clear
                 history -c && history -w
-                echo -e "\033[1;36mPAINEL WEB A.I ⚡ REMOVIDO COM SUCESSO! ❎\033[1;33m"
+                echo -e "\033[1;36mVPS FORMATADA COM SUCESSO SCRIPT BY @SrBright0! ❎\033[1;33m"
                 echo -e "\033[1;36mAgora você pode realizar uma nova instalação\nde qualquer outro script!\033[1;33m"
                 sleep 5
                 echo -e "\033[1;31m Fechando Terminal...️ e Reiniciando a VPS!\033[0m"
                 sleep 10
                 clear
                 reboot
-            else 
-            echo -e "PARA USAR ESTA OPÇÃO, VOCE PRECISA ADQUIRIR UMA"
-            figlet "VERSÃO PREMIUM" |lolcat --animate
-            sleep 1
-            echo -e "Fechando a conexão... "
-            sleep 5
-            pweb
             exit;
           fi
 fi
