@@ -6,16 +6,6 @@ echo -e "\033[1;37m┣━━━━━━━━━━━━━━━━━━━�
   read -p "┗━┫ POSSO REMOVER TUDO? [S/N]:" resp
 if [[ "$resp" = s || "$resp" = S ]];then
 clear
-echo -e "VERIFICANDO SE SUA INSTALAÇÃO É PREMIUM...." |lolcat
-sleep 2
-IP=$(wget -qO- ipv4.icanhazip.com)
-chave=$(curl -sSL "raw.githubusercontent.com/MegaHostNew/Utilitarios/chave" | grep  -o $IP )  &>/dev/null
-         if [[ "$chave" != "$IP" ]]
-          then
-                echo -e "PARABÉNS! SUA INSTALAÇÃO É UMA VERSÃO 🏆 PREMIUM"
-                sleep 5
-                echo $chave > /bin/chave_inst
-                clear
                 echo -e "Procurando ferramentas de remoção...." |lolcat
                 sleep 3
                 clear
