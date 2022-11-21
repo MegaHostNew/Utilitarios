@@ -1,3 +1,12 @@
+#!/bin/bash
+# Pequeno script para formata vps com permissao de autenticacao root
+rm Formatar.sh
+clear
+[[ "$(whoami)" != "root" ]] && {
+	clear
+	echo -e "\033[1;31mEXECULTE COMO USUARIO ROOT, \033[1;32m(\033[1;33msudo -i\033[1;32m)\033[0m"
+	exit
+}
 echo -e "\033[1;37m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
 echo -e "\033[1;37m┃[ ! ] VOCÊ ESTA PRESTES A REMOVER TODA A INSTALAÇÃO DESTA VPS \033[38;5;197m\033[38;5;197m\033[1;37m┃\E[0m"
 echo -e "\033[1;37m┃O USO DESTA OPÇÃO FARA  A REMOÇÃO DE CADA ITEM JA  INSTALADO.\033[38;5;197m\033[38;5;197m\033[1;37m ┃\E[0m"
@@ -150,6 +159,4 @@ clear
                 clear
                 reboot
             exit;
-          fi
-fi
-}
+       
